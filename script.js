@@ -3,24 +3,15 @@ import createInput from './assets/js/textInput.js';
 import createKeyboard from './assets/js/keyboard.js';
 import keyData from './assets/js/keyData.js';
 
-
-
-
 /* ===== Creating Page by recalling imported js files ===== */
 createContainerAndHeader();
 createInput();
 createKeyboard();
 
-
-
-
 /* ===== DOM Connection ===== */
 const rows = document.querySelectorAll('.row');
 const input = document.querySelector('.input');
 const caps = document.querySelector('.CapsLock');
-
-
-
 
 /* ===== Localstorage ===== */
 function getLocalStorage() {
@@ -79,9 +70,6 @@ let shft = false;
 input.focus();
 let cursor = input.selectionStart;
 
-
-
-
 /* ===== SHIFT ===== */
 function shiftDown() {
     if (!caps.classList.contains('key_caps')) {
@@ -130,9 +118,6 @@ function shiftChange(e) {
     }
 }
 
-
-
-
 /* ===== TAB ===== */
 function tabChange() {
     if (input.selectionStart !== input.selectionEnd) {
@@ -152,9 +137,6 @@ function tabChange() {
         input.setSelectionRange(cursor, cursor);
     }
 }
-
-
-
 
 /* ===== BACKSPACE ===== */
 function backspaceChange() {
@@ -177,9 +159,6 @@ function backspaceChange() {
     }
 }
 
-
-
-
 /* ===== DELETE ===== */
 function deleteChange() {
     if (input.selectionStart !== input.value.length) {
@@ -198,9 +177,6 @@ function deleteChange() {
         }
     }
 }
-
-
-
 
 /* ===== Enter ===== */
 function enterChange() {
@@ -221,9 +197,6 @@ function enterChange() {
         input.setSelectionRange(cursor, cursor);
     }
 }
-
-
-
 
 /* ===== CAPSLOCK ===== */
 function capsChange() {
@@ -249,9 +222,6 @@ function capsChange() {
         checkCaps = false;
     }
 }
-
-
-
 
 /* ===== LANGUAGE CHANGE ( Shift + Alt ) ===== */
 function langChange() {
@@ -280,9 +250,6 @@ function langChange() {
     }
     shft = false;
 }
-
-
-
 
 /* ===== TAB ===== */
 rows.forEach((e) => {
@@ -337,13 +304,8 @@ rows.forEach((e) => {
     });
 });
 
-
-
-
 /* ===== Main logic for KEYs ===== */
 document.addEventListener('keydown', (e) => {
-
-
     if (e.altKey && e.shiftKey) {
         langChange();
     }
@@ -407,9 +369,6 @@ document.addEventListener('keyup', (e) => {
     }
 });
 
-
-
-
 /* ===== CURSOR ===== */
 input.addEventListener('click', () => {
     if (input.selectionStart !== input.selectionEnd) {
@@ -420,9 +379,6 @@ input.addEventListener('click', () => {
         input.setSelectionRange(cursor, cursor);
     }
 });
-
-
-
 
 /* ===== LOCALSTORAGE ===== */
 function setLocalStorage() {
