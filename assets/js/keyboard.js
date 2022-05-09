@@ -1,4 +1,4 @@
-import keyData from './keydata.js';
+import keyData from './keyData.js';
 import Control from './control.js';
 
 class KeyBoard extends Control {
